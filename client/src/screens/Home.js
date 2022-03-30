@@ -14,7 +14,6 @@ export default function Home() {
         dispatch(getAllPizzas())
     }, [])
     
-    
     return (
         <div>
             <div style={{margin: '25px'}} className='row justify-content-center' >
