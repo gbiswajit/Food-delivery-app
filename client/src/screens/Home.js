@@ -17,14 +17,14 @@ export default function Home() {
     
     return (
         <div>
-            <div style={{margin: '25px'}} className='row' >
+            <div style={{margin: '25px'}} className='row justify-content-center' >
 
 
                 {loading? <h1>Loading</h1> :error? <h1>Error</h1>: (
                     pizzas.map(pizza => {
                         return (
-                        <div className="col-md-4 p-3 ">
-                            <div key={pizza.id} className='m-3 shadow-lg p-3 mb-5 bg-white rounded'>
+                        <div className="col-md-4" key={pizza._id}>
+                            <div className='m-3 shadow-lg p-3 mb-5 bg-white rounded'>
                                 <Pizza pizza={pizza} />
                             </div>
                         </div>
