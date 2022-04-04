@@ -1,9 +1,16 @@
 import React, {useState} from 'react'
 import pizzas from '../pizzasdata'
+import { useDispatch, useSelector } from 'react-redux'
+import { addToCart } from '../actions/cartActions'
+
 
 export default function Pizza({ pizza }) {
     const [quantity, setquantity]=useState(1)
     const [varient, setvarient]=useState('small')
+    const dispatch=useDispatch()
+    function addtocart(){
+        dispatch(addToCart(pizza, quantity, varient))
+    }
     return (
         <div>
             <h1>{pizza.name}</h1>
@@ -31,7 +38,7 @@ export default function Pizza({ pizza }) {
                     <h1><b>Price :{pizza.prices[0][varient]*quantity} Rs</b></h1>
                 </div>
                 <div className='m-1 w-100'>
-                    <button className='btn'>Add To Cart</button>
+                    <button className='btn' onClick={addtocart}>Add To Cart</button>
                 </div>
             </div>
         </div>
